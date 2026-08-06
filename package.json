@@ -1,0 +1,49 @@
+{
+  "name": "pulseboard",
+  "version": "0.1.0",
+  "description": "A customizable HetrixTools status page and admin dashboard for Cloudflare Workers.",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivLis-Studio/Pulseboard.git"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "check": "node --check worker.js && node --check src/productApp.js && npm run build",
+    "preview": "vite preview",
+    "worker:dev": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "cloudflare": {
+    "bindings": {
+      "CONFIG": {
+        "description": "Create or select the KV namespace used to store custom public status page settings."
+      },
+      "LOGOS": {
+        "description": "Create or select the R2 bucket used for public status page logo uploads."
+      },
+      "HETRIXTOOLS_API_KEY": {
+        "description": "Add your HetrixTools API v3 key as a Worker secret for public status pages."
+      },
+      "ADMIN_USERNAME": {
+        "description": "Set the username used to sign in to /admin (the temporary local default is admin)."
+      },
+      "ADMIN_PASSWORD": {
+        "description": "Set the password used to sign in to /admin (the temporary local default is admin)."
+      },
+      "DASHBOARD_SESSION_SECRET": {
+        "description": "Generate a random string for signing the HttpOnly admin session cookie, for example with openssl rand -hex 32."
+      }
+    }
+  },
+  "devDependencies": {
+    "vite": "^7.1.3",
+    "wrangler": "^4.28.1"
+  },
+  "overrides": {
+    "undici": "7.29.0"
+  }
+}

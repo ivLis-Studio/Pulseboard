@@ -1,0 +1,4 @@
+HETRIXTOOLS_API_KEY=replace-with-your-test-key
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=admin
+DASHBOARD_SESSION_SECRET=local-development-session-secret

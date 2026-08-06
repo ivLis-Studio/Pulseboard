@@ -1,0 +1,18 @@
+name = "pulseboard"
+main = "worker.js"
+compatibility_date = "2026-08-06"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+
+# Small page-builder settings are stored as one JSON document in KV. Deploy to
+# Cloudflare can provision the namespace and replace this placeholder ID.
+[[kv_namespaces]]
+binding = "CONFIG"
+id = "00000000000000000000000000000000"
+
+[[r2_buckets]]
+binding = "LOGOS"
+bucket_name = "pulseboard-logos"

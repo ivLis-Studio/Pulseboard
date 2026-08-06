@@ -2,6 +2,8 @@
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ivLis-Studio/Pulseboard)
 
+Live deployment: [pulse.ivl.is](https://pulse.ivl.is)
+
 Pulseboard turns HetrixTools monitoring data into a clean, UptimeRobot-style status page. Visitors see a public status page; the owner signs in to `/admin` and can manage monitor views and branded public routes.
 
 Source code and releases are maintained at [ivLis-Studio/Pulseboard](https://github.com/ivLis-Studio/Pulseboard).
@@ -209,6 +211,8 @@ Changing `DASHBOARD_SESSION_SECRET` invalidates existing sessions. Use the sign-
 ## 한국어 안내
 
 Pulseboard는 HetrixTools의 모니터링 데이터를 UptimeRobot과 비슷한 공개 Status Page로 보여주는 Cloudflare Worker 앱입니다.
+
+실제 배포 주소: [pulse.ivl.is](https://pulse.ivl.is)
 
 - `/` — 공개 상태 페이지
 - `/<slug>` — `/store`, `/api` 같은 커스텀 상태 페이지
